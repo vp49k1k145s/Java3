@@ -43,9 +43,9 @@ public class SQLite {
     }
 
     static void updateTable() {
-        try (PreparedStatement ps = conn.prepareStatement(
-                "UPDATE students set name = 'Vasya' where name like 'Bob1'")) {
-            ps.executeUpdate();
+        try {
+            conn.prepareStatement(
+                    "UPDATE students set name = 'Vasya' where name like 'Bob1'").executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
